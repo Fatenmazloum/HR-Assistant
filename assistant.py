@@ -9,7 +9,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "HR assistant"
 
 load_dotenv()
-apikey = os.getenv('OPENAI_API_KEY')
+#apikey = os.getenv('OPENAI_API_KEY')
 
 # Set up LLM (OpenAI GPT-4)
 llm = ChatOpenAI(model='gpt-3.5-turbo', api_key=apikey)

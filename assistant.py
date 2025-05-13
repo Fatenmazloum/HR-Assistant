@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 # Load environment variables from .env file
-os.environ["LANGCHAIN_API_KEY"] = ""
+os.environ["LANGCHAIN_API_KEY"] = "LANGCHAIN_API_KEY"
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "HR assistant"
 

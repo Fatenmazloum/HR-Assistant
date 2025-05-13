@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 # Load environment variables from .env file
-os.environ["LANGCHAIN_API_KEY"] = "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"
+os.environ["LANGCHAIN_API_KEY"] = "your-api-key-placeholder"
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "HR assistant"
 
@@ -97,7 +97,7 @@ agent = initialize_agent(
 
 import streamlit as st 
 st.set_page_config(page_title='HR-Assistant',layout='centered')
-st.title('Hello Iam your HR assistnt')
+st.title('Hello Iam your HR assistant')
 question=st.text_input('Enter your question')
 if question:
     response = agent.run(question)

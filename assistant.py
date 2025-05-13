@@ -9,12 +9,11 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "HR assistant"
 
 load_dotenv()
-#apikey = os.getenv('OPENAI_API_KEY')
+apikey = os.getenv('OPENAI_API_KEY')
 
-# Set up LLM (OpenAI GPT-4)
+
 llm = ChatOpenAI(model='gpt-3.5-turbo', api_key=apikey)
 
-# --- Define mocked functions (tools) ---
 
 def get_employee_name(id: str) -> dict:
     if id == '123':
@@ -60,7 +59,6 @@ def generate_interview_question(role: str) -> list:
     else:
         return ["No questions available for this role."]
 
-# --- Define LangChain tools ---
 
 from langchain.tools import Tool
 
@@ -82,7 +80,7 @@ interview_tool = Tool.from_function(
     description='Use this tool to generate interview questions for a given job role.'
 )
 
-# --- Initialize the agent ---
+
 
 from langchain.agents import initialize_agent, AgentType
 
@@ -93,7 +91,7 @@ agent = initialize_agent(
     verbose=True
 )
 
-# --- Ask a question ---
+
 
 import streamlit as st 
 st.set_page_config(page_title='HR-Assistant',layout='centered')

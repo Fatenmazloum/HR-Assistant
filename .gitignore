@@ -1,6 +1,13 @@
-test/
+# Ignore environment files
 .env
-__pycache__/
-*.pyc
-.vscode/
-".env" 
+
+# Ignore virtual environment named "test"
+test/
+
+# Ignore common secret/config files
+*.key
+*.pem
+*.crt
+*.env
+secrets.json
+

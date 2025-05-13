@@ -1,0 +1,98 @@
+Build an HR assistant that can answer employee questions by calling appropriate tools (functions). The assistant should:
+
+Answer general HR-related questions.
+Retrieve employee details from a database (mocked function).
+Check leave balances for employees.
+Generate interview questions based on job roles.
+
+
+
+📖** **Problem Statement
+Companies receive numerous HR inquiries from employees every day. These inquiries may include:
+
+"What is my remaining leave balance?"
+"What are the company policies on remote work?"
+"Can you retrieve my employee details?"
+"Generate some interview questions for a Data Scientist."
+Instead of HR manually answering every request, we will build an** AI-powered HR assistant that can **use tool calls to fetch the correct information.
+
+
+
+🔨** **Task Breakdown
+Your HR assistant should support at least** **three functions via tool calling:
+
+1️⃣** **Get Employee Details
+Retrieves details of an employee (name, department, role).
+Example tool call request:
+json
+CopyEdit
+{
+    "name": "get_employee_details",
+    "arguments": {
+      "employee_id": "E12345"
+    }
+  }
+  
+2️⃣** **Check Leave Balance
+Returns the remaining leave balance for an employee.
+Example tool call request:
+json
+CopyEdit
+{
+    "name": "check_leave_balance",
+    "arguments": {
+      "employee_id": "E12345"
+    }
+  }
+  
+3️⃣** **Generate Interview Questions
+Generates questions for a given job role.
+Example tool call request:
+json
+CopyEdit
+{
+    "name": "generate_interview_questions",
+    "arguments": {
+      "job_role": "Data Scientist"
+    }
+  }
+  
+
+📌** **Your Task
+
+🏗️** **Step 1: Define the HR Tools
+
+Implement Python functions for:
+get_employee_details(employee_id: str) -> dict
+check_leave_balance(employee_id: str) -> dict
+generate_interview_questions(job_role: str) -> list
+The functions should return** ** mocked data .
+
+🏗️** **Step 2: Define the HR Assistant
+
+Use Langchain and Langsmith
+Load an** **LLM model (GPT-4 or Gemini model) .
+Implement a chat system where:
+The user asks HR-related questions.
+The assistant determines when a tool should be called.
+The assistant formats a tool request.
+The tool runs and provides a result.
+The assistant integrates the result into its final response.
+
+🏗️** **Step 3: Handle Tool Calling
+
+Extract the tool call request from the model’s response.
+Execute the tool function.
+Feed the result back into the model.
+
+🏗️** **Step 4: Build an Interactive Interface
+
+Implement the assistant as ** Gradio-based chatbot .
+
+🎯** **Success Criteria
+
+
+✅** The assistant correctly calls tools when required. ✅ The assistant returns valid and relevant responses. ✅ The tool results are incorporated properly into the conversation. ✅ **The system prevents hallucinated tool calls (invalid tool names or arguments).
+
+
+
